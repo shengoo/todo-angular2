@@ -1,0 +1,25 @@
+{
+  "name": "todo-angular2",
+  "version": "1.0.0",
+  "description": "A todo app using angular2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shengoo/todo-angular2.git"
+  },
+  "author": "shengoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shengoo/todo-angular2/issues"
+  },
+  "homepage": "https://github.com/shengoo/todo-angular2#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "bootstrap-sass": "^3.3.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
