@@ -7,7 +7,6 @@
           todo with angular2 & typescript
 				</a>
 			</div>
-
 		</div>
 	</nav>
 	<header class="container">
@@ -16,8 +15,13 @@
 	</header>
 	<section class="container">
 		<ul class="list-group">
-      <li *ngFor="let todo of todoService.todoList" class="list-group-item">
-        {{todo.title}}
+      <li *ngFor="let todo of todoService.todoList" class="list-group-item todo-item">
+				<input type="checkbox" [(ngModel)]="todo.completed">
+        <label *ngIf="!todo.editing">{{todo.title}}</label>
+				<input *ngIf="todo.editing" [(ngModel)]="todo.title" [value]="todo.title" #editedtodo 
+				(blur)="save(todo);" (keyup.enter)="save(todo);"
+				class="edit" >
+				<span (click)="delete(todo);" class="delete">&#x2716;</span>
       </li>
 		</ul>
 	</section>

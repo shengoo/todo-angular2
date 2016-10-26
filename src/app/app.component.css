@@ -13,3 +13,11 @@ header.container button{
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.todo-item .delete{
+    float: right;
+    font-size: x-large;
+    width: 30px;
+    text-align: center;
+    margin-top: -7px;
+}

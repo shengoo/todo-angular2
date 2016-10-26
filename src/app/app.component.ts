@@ -30,4 +30,12 @@ export class AppComponent implements OnInit {
     }
   }
 
+  save(todo:Todo){
+    console.log(todo);
+  }
+
+  delete(todo:Todo){
+    this.todoService.delete(todo);
+  }
+
 }

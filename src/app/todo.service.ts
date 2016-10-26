@@ -28,6 +28,10 @@ export class TodoService {
             this.saveData();
         }
     }
+    delete(todo:Todo){
+        this.todoList.splice(this.todoList.indexOf(todo),1);
+        this.saveData();
+    }
 
     private saveData(){
         localStorage.setItem(this.storageKey,JSON.stringify(this.todoList));
