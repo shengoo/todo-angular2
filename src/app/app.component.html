@@ -1,13 +1,26 @@
-<h1>
-    {{title}}
-</h1>
 <section class="main">
-  <header>
+	<nav class="navbar navbar-inverse navbar-fixed-top2">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand">
+					<span><img alt="Brand" src="favicon.ico"></span>
+          todo with angular2 & typescript
+				</a>
+			</div>
 
-  </header>
-  <section>
-
-  </section>
-  <footer>
-  </footer>
+		</div>
+	</nav>
+	<header class="container">
+		<input [(ngModel)]="newTodo" (keyup.enter)="add();"  type="text" placeholder="new todo.">
+    <button (click)="add();" class="btn btn-default" >Add</button>
+	</header>
+	<section class="container">
+		<ul class="list-group">
+      <li *ngFor="let todo of todoService.todoList" class="list-group-item">
+        {{todo.title}}
+      </li>
+		</ul>
+	</section>
+	<footer>
+	</footer>
 </section>

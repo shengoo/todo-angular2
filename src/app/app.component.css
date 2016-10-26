@@ -1,0 +1,15 @@
+.navbar-brand>img{
+    margin: -6px;
+}
+
+header.container{
+    display: flex;
+}
+header.container input{
+    flex: 1;
+    margin-right: 15px;
+}
+header.container button{
+    padding-left: 15px;
+    padding-right: 15px;
+}
