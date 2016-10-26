@@ -6,7 +6,8 @@ import { TodoService } from './todo.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css', '../../node_modules/bootstrap/dist/css/bootstrap.min.css'],
+  styleUrls: [
+    './app.component.less'],
   providers: [TodoService]
 })
 export class AppComponent implements OnInit {
@@ -23,18 +24,18 @@ export class AppComponent implements OnInit {
     this.todoList = this.todoService.getAll();
   }
 
-  add(){
-    if(this.newTodo){
+  add() {
+    if (this.newTodo) {
       this.todoService.add(this.newTodo);
       this.newTodo = '';
     }
   }
 
-  save(todo:Todo){
+  save(todo: Todo) {
     console.log(todo);
   }
 
-  delete(todo:Todo){
+  delete(todo: Todo) {
     this.todoService.delete(todo);
   }
 
