@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0-beta.18",
-    "name": "todo-app"
+    "name": "todo-angular2"
   },
   "apps": [
     {
