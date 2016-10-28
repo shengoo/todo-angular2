@@ -1,30 +1,36 @@
-<section class="main">
-	<nav class="navbar navbar-inverse navbar-fixed-top2">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand">
-					<span><img alt="Brand" src="favicon.ico"></span>
-          todo with angular2 & typescript
-				</a>
-			</div>
-		</div>
-	</nav>
-	<header class="container">
-		<input [(ngModel)]="newTodo" (keyup.enter)="add();"  type="text" placeholder="new todo.">
-    <button (click)="add();" class="btn btn-default" >Add</button>
-	</header>
-	<section class="container">
-		<ul class="list-group">
-      <li *ngFor="let todo of todoService.todoList" class="list-group-item todo-item">
-				<input type="checkbox" [(ngModel)]="todo.completed">
-        <label *ngIf="!todo.editing">{{todo.title}}</label>
-				<input *ngIf="todo.editing" [(ngModel)]="todo.title" [value]="todo.title" #editedtodo 
-				(blur)="save(todo);" (keyup.enter)="save(todo);"
-				class="edit" >
-				<span (click)="delete(todo);" class="delete">&#x2716;</span>
-      </li>
-		</ul>
-	</section>
-	<footer>
-	</footer>
+<section class="ionic-body">
+    <ion-navbar *navbar>
+        <ion-title>
+            GitHub
+        </ion-title>
+    </ion-navbar>
+    <div class="bar bar-header bar-stable2">
+        <h1 class="title">TODO</h1>
+    </div>
+    <section class="content has-header">
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <input [(ngModel)]="newTodo" (keyup.enter)="add();" type="text" placeholder="new todo.">
+            </label>
+            <button (click)="add();" class="button button-small">
+                Add
+            </button>
+        </div>
+        <ul class="list">
+            <li *ngFor="let todo of todoService.todoList" class="item item-icon-left item-icon-right item-checkbox">
+                <i class="icon">
+                    <input type="checkbox" [(ngModel)]="todo.completed" class="item-icon-left">
+                </i>
+                <label *ngIf="!todo.editing">{{todo.title}}</label>
+                <input *ngIf="todo.editing" [(ngModel)]="todo.title" [value]="todo.title" #editedtodo
+                       (blur)="save(todo);" (keyup.enter)="save(todo);" class="edit">
+                <i (click)="delete(todo);" class="icon ion-close"></i>
+            </li>
+        </ul>
+    </section>
+    <div class="bar bar-footer">
+        <button class="button button-clear">Left</button>
+        <div class="title">Title</div>
+        <button class="button button-clear">Right</button>
+    </div>
 </section>

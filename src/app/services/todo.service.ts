@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+//import { Injectable } from '@angular/core';
 
 
-import { Todo } from './todo';
+import { Todo } from '../models/todo';
 
 // @Injectable()
 export class TodoService {
@@ -22,7 +22,10 @@ export class TodoService {
     getAll() {
         return this.todoList;
     }
-    add(title) {
+    /**
+     *
+     */
+    add(title:String) {
         if (title) {
             this.todoList.push(new Todo(title));
             this.saveData();

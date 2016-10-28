@@ -1,42 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Todo } from './todo';
-import { TodoService } from './todo.service';
+import {Component} from '@angular/core';
+import {HomePage} from './pages/home/home';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: [
-    './app.component.less'],
-  providers: [TodoService]
+    // selector: 'app-root',
+    // templateUrl: './app.component.html',
+    // styleUrls: ['./app.component.less'],
+    providers: [HomePage],
+    template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
-export class AppComponent implements OnInit {
-  title = 'app works!';
-  todoService: TodoService;
-  todoList: Todo[] = [];
-  newTodo = '';
+export class AppComponent {
+    rootPage = HomePage;
+    newTodo = '';
 
-  constructor(todoService: TodoService) {
-    this.todoService = todoService;
-  }
+    constructor() {
 
-  ngOnInit(): void {
-    this.todoList = this.todoService.getAll();
-  }
-
-  add() {
-    if (this.newTodo) {
-      this.todoService.add(this.newTodo);
-      this.newTodo = '';
     }
-  }
-
-  save(todo: Todo) {
-    console.log(todo);
-  }
-
-  delete(todo: Todo) {
-    this.todoService.delete(todo);
-  }
-
 }
